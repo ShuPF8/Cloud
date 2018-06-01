@@ -1,0 +1,12 @@
+server:
+  port: 8763
+
+spring:
+  application:
+    name: service-spf-1
+
+# 配置服务中心地址
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8517/eureka/
