@@ -1,4 +1,4 @@
-package com.spf.cloud.feign.service.controller;
+package com.spf.cloud.feign.controller;
 
 import com.spf.cloud.feign.service.ScheduaServiceHi;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,6 @@ import javax.annotation.Resource;
  * @date 2018-06-01 15:06
  */
 @RestController
-@RequestMapping("hiController")
 public class HiController {
 
     @Resource private ScheduaServiceHi scheduaServiceHi;

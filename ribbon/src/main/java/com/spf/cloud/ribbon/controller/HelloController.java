@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2018-06-01 14:22
  */
 @RestController
-@RequestMapping("helloController")
 public class HelloController {
 
     @Autowired
