@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: service-feign
+
+# 指定 erureka server 服务
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8517/eureka/
+
+# 开启断路器
+feign:
+  hystrix:
+    enabled: true
