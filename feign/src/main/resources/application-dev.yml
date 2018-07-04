@@ -1,6 +1,8 @@
 spring:
   application:
     name: service-feign
+  zipkin:
+    base-url: http://localhost:9411
 
 # 指定 erureka server 服务
 eureka:
