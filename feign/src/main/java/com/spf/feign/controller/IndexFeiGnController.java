@@ -18,17 +18,17 @@ public class IndexFeiGnController {
     @Autowired
     private IndexService indexService;
 
-    @Value("${foo}")
-    String host;
+    @Value("${spring.application.name}")
+    String name;
 
     @RequestMapping(value = "hi")
     public Object sayHi(@RequestParam(value = "name") String name) {
         return indexService.sayHiFromClientOne(name);
     }
 
-    @RequestMapping(value = "host")
+    @RequestMapping(value = "name")
     public Object host() {
-        return host;
+        return name;
     }
 
 }

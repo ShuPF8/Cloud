@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @类说明：
  * @date 2018-10-24 18:32
  */
-@FeignClient(value = "eureka-client", fallback = IndexServiceImpl.class)
+@FeignClient(value = "euraka-client", fallback = IndexServiceImpl.class)
 public interface IndexService {
 
     @RequestMapping(value = "/index/home",method = RequestMethod.GET)

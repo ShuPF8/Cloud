@@ -7,6 +7,7 @@
     <groupId>com.spf.cloud</groupId>
     <artifactId>cloud</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
     <name>cloud</name>
     <description>Demo project for Spring Boot</description>
@@ -19,7 +20,6 @@
     </parent>
 
     <modules>
-        <module>eureka_server</module>
         <module>euraka_client</module>
         <module>feign</module>
         <module>zuul</module>
@@ -37,7 +37,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
