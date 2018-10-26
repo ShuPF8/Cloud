@@ -23,6 +23,7 @@
         <module>euraka_client</module>
         <module>feign</module>
         <module>zuul</module>
+        <module>common</module>
     </modules>
 
     <properties>
