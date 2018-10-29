@@ -20,11 +20,20 @@ public class AllExceptionHandle {
     /**
      * 处理非法tenantId请求
      * */
-    @ExceptionHandler(NullPointerException.class)
+    @ExceptionHandler(RuntimeException.class)
     @ResponseBody
-    public Object nullPointerExceptionHandler(NullPointerException e){
-        return new Message<>().fail(e.getMessage());
+    public Object nullPointerExceptionHandler(RuntimeException e){
+        return setup(e);
     }
 
+    private Message setup(Exception e){
+        logger.info ("------本次请求抛出了一个{}异常，请求结束------\n",e.getClass ());
+        logger.error("", e);
+
+        Message result = new Message ();
+        //有异常就直接判失败
+        result.fail(e.getMessage());
+        return result;
+    }
 
 }

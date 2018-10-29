@@ -18,11 +18,16 @@ public class IndexController {
 
     @RequestMapping(value = "home")
     public Object home(String name) {
-        Integer a = 1, b = 0;
-        if (a > b ) {
-            throw new NullPointerException("系统异常测试");
-        }
         return "hi " + name + " ,i am from port:" + port;
+    }
+
+    @RequestMapping(value = "exception")
+    public Object exception() {
+        int a = 2, b = 1;
+        if (a > b) {
+            throw new NullPointerException("系统空指针异常测试");
+        }
+        return null;
     }
 
 }
