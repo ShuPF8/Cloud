@@ -2,7 +2,6 @@ package com.spf.euraka_client.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -18,7 +17,11 @@ public class IndexController {
     String port;
 
     @RequestMapping(value = "home")
-    public Object home(@RequestParam("name")String name) {
+    public Object home(String name) {
+        Integer a = 1, b = 0;
+        if (a > b ) {
+            throw new NullPointerException("系统异常测试");
+        }
         return "hi " + name + " ,i am from port:" + port;
     }
 
