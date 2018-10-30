@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * @author ShuPF
  * @类说明：
@@ -22,7 +24,8 @@ public class IndexFeiGnController {
     String name;
 
     @RequestMapping(value = "hi")
-    public Object sayHi(@RequestParam(value = "name") String name) {
+    public Object sayHi(HttpServletRequest request, @RequestParam(value = "name") String name) {
+        System.out.println("------------------------ feign url:"+request.getRequestURL().toString());
         return indexService.sayHiFromClientOne(name);
     }
 
