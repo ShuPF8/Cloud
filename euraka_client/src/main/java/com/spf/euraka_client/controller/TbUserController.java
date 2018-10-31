@@ -7,10 +7,12 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.spf.euraka_client.model.TbUser;
 import com.spf.euraka_client.service.TbUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 /**
@@ -39,6 +41,12 @@ public class TbUserController {
         IPage<TbUser> page = new Page<>(1,2);
         IPage<TbUser> pages =  userService.page(page, new QueryWrapper<>());
         return pages;
+    }
+
+    @RequestMapping("name")
+    public Object name(@NotBlank(message = "name 不能为空") String name) {
+       TbUser user = userService.findByUser(name);
+        return user;
     }
 
 }

@@ -17,4 +17,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class TbUserServiceImpl extends ServiceImpl<TbUserMapper, TbUser> implements TbUserService {
 
+    @Override
+    public TbUser findByUser(String name) {
+        return baseMapper.queryUserByName(name);
+    }
 }

@@ -13,4 +13,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface TbUserMapper extends BaseMapper<TbUser> {
 
+    TbUser queryUserByName(String name);
+
 }
