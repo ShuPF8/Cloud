@@ -20,9 +20,6 @@ public class IndexController {
     @Value("${server.port}")
     String port;
 
-    @Value("${des}")
-    String des;
-
     @RequestMapping(value = "home")
     public Object home(HttpServletRequest request, String name) {
         System.out.println("----------------------------------url:" + request.getRequestURL().toString());
@@ -36,11 +33,6 @@ public class IndexController {
             throw new NullPointerException("系统空指针异常测试");
         }
         return null;
-    }
-
-    @RequestMapping("des")
-    public String des() {
-        return des;
     }
 
 }
